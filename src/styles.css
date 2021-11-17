@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    direction: rtl;
+    font-family: IRANSansX;
+}
+
+@font-face {
+	font-family: IRANSansX;
+	font-style: normal;
+	font-weight: 700;
+	src: url('./assets/fonts/woff/IRANSansXFaNum-Bold.woff') format('woff'),   
+	url('./assets/fonts/woff2/IRANSansXFaNum-Bold.woff2') format('woff2');	 
+}
+
+@font-face {
+	font-family: IRANSansX;
+	font-style: normal;
+	font-weight: 400;
+	src: url('./assets/fonts/woff/IRANSansXFaNum-Regular.woff') format('woff'),   
+	url('./assets/fonts/woff2/IRANSansXFaNum-Regular.woff2') format('woff2');	
+}
