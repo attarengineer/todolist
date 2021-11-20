@@ -7,8 +7,9 @@ import { Task } from '../task/task.component';
   styleUrls: ['./task-list.component.css']
 })
 export class TaskListComponent implements OnInit {
-  tasks: Array<Task> = new Array<Task>();
+  // tasks: Array<Task> = new Array<Task>();
   newTitle: string;
+  
 
   constructor() { }
 
@@ -16,21 +17,26 @@ export class TaskListComponent implements OnInit {
     // for (let i=0; i<10; i++) {
     //   this.tasks.push(new Task('تسک شماره: ' + i, false))
     // }
+    this.projects.push(new Project('شخصی'))
   }
 
   addNewTask() {
-    let tasks: Task = new Task(this.newTitle, false)
-    this.tasks.push(tasks)
+    let task: Task = new Task(this.newTitle, false)
+    // this.tasks.push(tasks)
+    this.projects[0].tasks.push(task);
   }
 
   getTask() {
     let validTasks = new Array<Task>();
-    for (let i = 0; i < this.tasks.length; i++) {
-      if (!this.tasks[i].isDone) {
-        validTasks.push(this.tasks[i]);
+    for(let project of this.projects){
+      for(let task of project.tasks){
+        if (!task.isDone){
+          validTasks.push(task);
+        }
       }
     }
     return validTasks;
   }
-
 }
+
+

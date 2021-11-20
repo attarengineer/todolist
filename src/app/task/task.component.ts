@@ -28,6 +28,6 @@ export class Task {
   
   constructor(title: string, isDone: boolean) {
     this.title = title;
-    this.isDone = this.isDone;
+    this.isDone = isDone;
   }
 }
