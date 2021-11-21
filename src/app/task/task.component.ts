@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Task } from '../services/project.service';
 
 @Component({
   selector: 'app-task',
@@ -22,12 +23,4 @@ export class TaskComponent implements OnInit {
 
 }
 
-export class Task {
-  public title: string;
-  public isDone: boolean = false;
-  
-  constructor(title: string, isDone: boolean) {
-    this.title = title;
-    this.isDone = isDone;
-  }
-}
+

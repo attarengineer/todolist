@@ -1,1 +1,6 @@
-<p>لیست پروژه ها</p>
+<div>
+    <button (click)="onShowProjects()" type="button" class="btn btn-outline-secondary">لیست پروژه ها:</button>
+    <p *ngFor="let project of projects">
+        {{project.title}}
+    </p>
+</div>
