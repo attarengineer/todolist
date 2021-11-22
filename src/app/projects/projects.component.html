@@ -1,6 +1,19 @@
-<div>
-    <button (click)="onShowProjects()" type="button" class="btn btn-outline-secondary">لیست پروژه ها:</button>
-    <p *ngFor="let project of projects">
-        {{project.title}}
-    </p>
+<div class="container">
+    <div class="row">
+        <a (click)="onShowProjects()" type="button" class="btn">لیست پروژه ها:</a>
+    </div>
+    <div class="row">
+        <div class="col-lg-3 col-sm-5">
+            <button (click)="onNewProject()" class="btn btn-outline-secondary" type="button" id="button-addon1">افزودن</button>
+        </div>
+        <div class="col-lg-9 col-sm-7">
+            <input [(ngModel)]="newProjectTitle"  type="text" class="form-control" placeholder="کار جدید" aria-label="Example text with button addon"
+                aria-describedby="button-addon1">
+        </div>
+    </div>
+    <div class="row">
+        <a class="active-project" [routerLink]="project.title" *ngFor="let project of getProjectsTitle()">
+            {{project.title}}
+        </a>
+    </div>
 </div>

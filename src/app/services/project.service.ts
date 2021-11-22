@@ -5,7 +5,10 @@ import { Injectable } from "@angular/core";
 })
 export class ProjectService {
     projects: Array<Project> = new Array<Project>();
-    constructor() { }
+    lastIDNumber: number = 0;
+    constructor() {
+        this.addNewProject("پیش فرض");
+    }
 
     getProjects() {
         return this.projects;
@@ -19,16 +22,27 @@ export class ProjectService {
             this.projects[projectID].tasks.push(task);
         }
     }
+
     addNewProject(projectTitle: string) {
-        this.projects.push(new Project(projectTitle));
+        this.projects.push(new Project(projectTitle, this.lastIDNumber++));
+    }
+
+    getTask(projectID: number) {
+        if(this.projects[projectID] != null && this.projects[projectID] != undefined) {
+            return this.projects[projectID].tasks;
+        }else{
+            return null;
+        }
     }
 }
 
 export class Project {
     public title: string;
+    public id: number;
     public tasks: Array<Task> = new Array<Task>();
-    constructor(title: string) {
+    constructor(title: string, id: number) {
         this.title = title;
+        this.id = id;
     }
 }
 

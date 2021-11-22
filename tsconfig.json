@@ -22,7 +22,9 @@
     "lib": [
       "es2020",
       "dom"
-    ]
+    ],
+    // add for null error
+    "strictNullChecks": false
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

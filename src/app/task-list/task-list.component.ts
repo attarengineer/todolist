@@ -36,6 +36,14 @@ export class TaskListComponent implements OnInit {
     }
     return validTasks;
   }
+
+  getProjectsTitle() {
+  //   let titles = new Array<String>();
+  //   for (let project of this.projectService.getProjects()) {
+  //     titles.push(project.title);
+  //   }
+  //   return titles;
+  // }
+    return this.projectService.getProjects();
+  }
 }
-
-

@@ -1,4 +1,13 @@
-<div>
-    {{task.title}}
-    <button (click)="completeTask()" type="button" class="btn btn-success">انجام شد</button>
+<div class="container">
+    <div class="row">
+        <div class="col-8">
+            <h6>
+                <span class="badge bg-secondary">Secondary</span>
+                {{task.title}}
+            </h6>
+        </div>
+        <div class="col-4">
+            <button (click)="completeTask()" type="button" class="btn btn-success">انجام شد</button>
+        </div>
+    </div>
 </div>

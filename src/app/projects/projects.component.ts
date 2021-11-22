@@ -9,6 +9,7 @@ import { ProjectService, Project } from '../services/project.service';
 })
 export class ProjectsComponent implements OnInit {
   projects: Array<Project> = new Array<Project>();
+  newProjectTitle: string;
 
   constructor(
     private projectService: ProjectService,
@@ -21,5 +22,13 @@ export class ProjectsComponent implements OnInit {
   
   onShowProjects() {
     this.router.navigate(["/projects"])
+  }
+
+  onNewProject() {
+    this.projectService.addNewProject(this.newProjectTitle);
+  }
+
+  getProjectsTitle() {
+    return this.projectService.getProjects();
   }
 }

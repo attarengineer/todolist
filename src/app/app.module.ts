@@ -11,9 +11,11 @@ import { ProjectService } from './services/project.service';
 import { TaskListComponent } from './task-list/task-list.component';
 import { TaskComponent } from './task/task.component';
 import { AppHomeComponent } from './app-home/app-home.component';
+import { ProjectComponent } from './project/project.component';
 
 const appRoute: Routes = [
   {path: 'projects', component: ProjectsComponent},
+  {path: 'projects/:id', component: ProjectComponent},
   {path: '', component: AppHomeComponent}
 ]
 
@@ -24,7 +26,8 @@ const appRoute: Routes = [
     ProjectsComponent,
     TaskListComponent,
     TaskComponent,
-    AppHomeComponent
+    AppHomeComponent,
+    ProjectComponent
   ],
   imports: [
     BrowserModule,
