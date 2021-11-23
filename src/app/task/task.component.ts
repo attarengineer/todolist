@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Task } from '../services/project.service';
+import { Project, ProjectService, Task } from '../services/project.service';
 
 @Component({
   selector: 'app-task',
@@ -9,9 +9,7 @@ import { Task } from '../services/project.service';
 export class TaskComponent implements OnInit {
   @Input() task: Task;
 
-  constructor() { 
-    
-  }
+  constructor(private projectService: ProjectService) {}
 
   ngOnInit(): void {
     
@@ -20,7 +18,11 @@ export class TaskComponent implements OnInit {
   completeTask() {
     this.task.isDone = true;
   }
-
+  
+  getProjectTitle() {
+    console.log(this.projectService.getProjectOfTask(this.task).title);
+    return this.projectService.getProjectOfTask(this.task).title;
+  }
 }
 
 

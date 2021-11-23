@@ -27,9 +27,22 @@ export class ProjectService {
         this.projects.push(new Project(projectTitle, this.lastIDNumber++));
     }
 
+    addNewTask(title: string, isDone: boolean, projectID: number = 0) {
+        let newTask = new Task(title, isDone, projectID);
+        this.addTaskProject(newTask, projectID);
+    }
+
     getTask(projectID: number) {
         if(this.projects[projectID] != null && this.projects[projectID] != undefined) {
             return this.projects[projectID].tasks;
+        }else{
+            return null;
+        }
+    }
+
+    getProjectOfTask(task: Task) {
+        if(this.projects[task.projectID] != null && this.projects[task.projectID] != undefined) {
+            return this.projects[task.projectID]
         }else{
             return null;
         }
@@ -49,9 +62,11 @@ export class Project {
 export class Task {
     public title: string;
     public isDone: boolean = false;
+    public projectID: number;
 
-    constructor(title: string, isDone: boolean) {
+    constructor(title: string, isDone: boolean, projectID: number) {
         this.title = title;
         this.isDone = isDone;
+        this.projectID = projectID;
     }
 }

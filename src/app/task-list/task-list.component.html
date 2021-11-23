@@ -2,7 +2,7 @@
     <button (click)="addNewTask()" class="btn btn-outline-secondary" type="button" id="button-addon1">افزودن</button>
     <input [(ngModel)]= 'newTitle' type="text" class="form-control" placeholder="کار جدید" aria-label="Example text with button addon"
         aria-describedby="button-addon1">
-    <select name="project" id="project" class="form-select" aria-label="Default select example">
+    <select [(ngModel)]="newprojectID" name="project" id="project" class="form-select" aria-label="Default select example">
         <option *ngFor="let project of getProjectsTitle()" [value]="project.id">{{project.title}}</option>
     </select>
 </div>
