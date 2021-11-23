@@ -19,7 +19,6 @@ export class TaskListComponent implements OnInit {
   addNewTask() {
     let task: Task = new Task(this.newTitle, false, this.newprojectID)
     this.projectService.addTaskProject(task, this.newprojectID);
-    console.log(this.newprojectID)
   }
 
   getTask() {
