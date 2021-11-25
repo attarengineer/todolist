@@ -20,8 +20,11 @@ export class TaskComponent implements OnInit {
   }
   
   getProjectTitle() {
-    console.log(this.projectService.getProjectOfTask(this.task).title);
     return this.projectService.getProjectOfTask(this.task).title;
+  }
+
+  getProjectID() {
+    return this.projectService.getProjectOfTask(this.task).id.toString();
   }
 }
 

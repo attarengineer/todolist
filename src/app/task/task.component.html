@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-8">
             <h6>
-                <span class="badge bg-secondary">{{getProjectTitle()}}</span>
+                <a [routerLink]="getProjectID()"><span class="badge bg-secondary">{{getProjectTitle()}}</span></a>
                 {{task.title}}
             </h6>
         </div>

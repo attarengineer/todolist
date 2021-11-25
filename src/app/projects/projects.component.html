@@ -12,7 +12,7 @@
         </div>
     </div>
     <div class="row">
-        <a class="active-project" [routerLink]="project.title" *ngFor="let project of getProjectsTitle()">
+        <a *ngFor="let project of getProjectsTitle()" class="active-project" [routerLink]="project.title" >
             {{project.title}}
         </a>
     </div>
